@@ -34,6 +34,7 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   justify-items: center;
+  gap: 70px;
   /* background-image: url("./images/grid.svg");
   background-position: center;
   background-size: 100%;
@@ -65,15 +66,22 @@ body {
 }
 
 .description {
-  background-color: #333;
-  color: white;
+  background-color: white;
+  color:  #333;
   padding: 20px;
   transform: translateY(100vh);
   transition: transform 1s;
+  width: 200px;
+  height: 250px;
 }
 
 .grid-item:not(:last-child) {
   border-right: 3px solid black;
+}
+
+.grid-item:first-child {
+  border-left: 3px solid black;
+  padding-left: 50px;
 }
 
 .grid-item:hover .description {
@@ -100,6 +108,10 @@ body {
   animation: picture 1s forwards;
 }
 
+.img {
+  width: 1500px;
+}
+
 @keyframes picture {
   from {
     background-position: 0 100%;
@@ -110,6 +122,3 @@ body {
   }
 }
 
-.img {
-  width: 1500px;
-}
