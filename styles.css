@@ -1,0 +1,115 @@
+body {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.container {
+  height: 100vh;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.square {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.content {
+  position: absolute;
+  inset: 0;
+  background-image: url('./images/girl.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  /* background-image: url("./images/grid.svg");
+  background-position: center;
+  background-size: 100%;
+  background-repeat: no-repeat; */
+}
+
+.grid::before, 
+.grid::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  left: 0;
+  border-top: 3px solid black;
+}
+
+.grid::before {
+  top: 33%;
+}
+
+.grid::after {
+  top: 66%;
+}
+
+.num {
+  cursor: pointer;
+  color: yellow;
+  font-size: 180px;
+  margin-top: 350px;
+}
+
+.description {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  transform: translateY(100vh);
+  transition: transform 1s;
+}
+
+.grid-item:not(:last-child) {
+  border-right: 3px solid black;
+}
+
+.grid-item:hover .description {
+  transform: translateY(-44vh);
+}
+
+#one:hover~.content {
+  background-image: url('./images/pink.jpeg');
+  animation: picture 1s forwards;
+}
+
+#two:hover~.content {
+  background-image: url('./images/sea.jpeg');
+  animation: picture 1s forwards;
+}
+
+#three:hover~.content {
+  background-image: url('./images/rain.webp');
+  animation: picture 1s forwards;
+}
+
+#four:hover~.content {
+  background-image: url('./images/sea.jpeg');
+  animation: picture 1s forwards;
+}
+
+@keyframes picture {
+  from {
+    background-position: 0 100%;
+  }
+
+  to {
+    background-position: 0 0;
+  }
+}
+
+.img {
+  width: 1500px;
+}
